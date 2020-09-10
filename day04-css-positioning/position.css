@@ -10,3 +10,9 @@ body {
     margin: 0;
     padding: 20px;
 }
+
+.one {
+    border: 2px solid blue;
+    height: 100px;
+    width: 100px;
+}
