@@ -8,11 +8,27 @@ html {
 
 body {
     margin: 0;
+    padding: 20px;
 }
 
 
 
 .one {
-    
+    width: 100px;
+    height: 100px;
+
+    /* border-color: red;
+    border-style: groove;
+    border-width: 2px 4px 8px 1px; */
+
+    border: groove red;
+    border-width: 2px 10px 20px 10px;
+
+    border-radius: 50%;
+
+    text-align: center;
+    line-height: 100px;
+
+    box-shadow: 10px 5px 5px black;
 }
 
