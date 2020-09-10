@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Cheri';
+    src: url('Cheri.eot');
+    src: url('Cheri.eot?#iefix') format('embedded-opentype'),
+        url('Cheri.woff2') format('woff2'),
+        url('Cheri.woff') format('woff'),
+        url('Cheri.ttf') format('truetype'),
+        url('Cheri.svg#Cheri') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

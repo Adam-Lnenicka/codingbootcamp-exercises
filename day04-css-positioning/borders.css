@@ -1,9 +1,23 @@
+@font-face {
+    font-family: 'Cheri';
+    src: url('fonts/Cheri.eot');
+    src: url('fonts/Cheri.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Cheri.woff2') format('woff2'),
+        url('fonts/Cheri.woff') format('woff'),
+        url('fonts/Cheri.ttf') format('truetype'),
+        url('fonts/Cheri.svg#Cheri') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 * {
     box-sizing: content-box;
 }
 
 html {
     background: transparent url('background-grid.png') left top repeat scroll;
+    font-family: 'Cheri';
 }
 
 body {
