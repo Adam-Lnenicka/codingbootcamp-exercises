@@ -9,10 +9,36 @@ html {
 body {
     margin: 0;
     padding: 20px;
+    height: 200vh;
+
+    
 }
 
 .one {
     border: 2px solid blue;
     height: 100px;
     width: 100px;
+
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f3e2c7+0,c19e67+44,b68d4c+69,e9d4b3+100 */
+    background: #f3e2c7; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #f3e2c7 0%, #c19e67 44%, #b68d4c 69%, #e9d4b3 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #f3e2c7 0%,#c19e67 44%,#b68d4c 69%,#e9d4b3 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #f3e2c7 0%,#c19e67 44%,#b68d4c 69%,#e9d4b3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#e9d4b3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.two {
+    border: 2px solid red;
+    height: 300px;
+    width: 400px;
+    margin-top: 2em;
+    /* overflow: scroll; */
+
+    /* background-image: url('background-image.jpg');
+    background-repeat: no-repeat;
+    background-size: 200px auto;
+    background-attachment: scroll;
+    background-position: center; */
+
+    background: pink url('background-image.jpg') center/200px auto no-repeat scroll;
 }
