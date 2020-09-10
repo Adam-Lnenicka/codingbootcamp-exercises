@@ -1,0 +1,80 @@
+html {
+    background: transparent url('background-grid.png') left top repeat scroll;
+    font-size: 10px;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-size: 8px;
+
+    /* background: rgba(255,0,0,0.5); */
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.one {
+    border: 2px solid blue;
+    height: 100px;
+    width: 100px;
+}
+
+.two {
+    border: 2px solid green;
+    height: 50%;
+    width: 50%;
+}
+
+.three {
+    border: 2px solid red;
+    font-size: 2em;
+    width: 10em;
+    height: 10em;
+    /* margin: 1em; */
+    padding: 0.5em;
+}
+
+.four {
+    border: 2px solid orange;
+    width: 50vw;
+    height: 50vh;
+}
+
+.five {
+    font-size: 2em;
+    border: 2px solid purple;
+    /* width: 100px; */
+    height: 100px;
+    display: inline-block;
+    /* visibility: hidden;
+    opacity: 1;
+    background-color: purple; */
+}
+
+.card {
+
+    font-size: 12px;
+
+    border: 0.125em solid black;
+    padding: 1em;
+    display: flex;
+    width: 20rem; 
+}
+
+.card .photo {
+    border: 0.125em solid black;
+    width: 5em;
+    height: 8em;
+    margin-right: 1em;
+}
+
+.card .name {
+    font-size: 2em;
+}
+
+.card .phone {
+    font-size: 1.25em;
+    margin-top: 0.5em;
+}
