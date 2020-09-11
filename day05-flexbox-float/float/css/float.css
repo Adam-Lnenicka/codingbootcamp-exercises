@@ -1,0 +1,29 @@
+p {
+    border: 2px solid grey;
+}
+
+img {
+    border: 2px solid red;
+}
+
+.ironman {
+    float: right;
+    height: 4em;
+    clear: both;
+}
+
+.superman {
+    float: right;
+    height: 4em;
+}
+
+.floated {
+    border: 2px solid purple;
+    height: 6em;
+    float: left;
+    margin: 0 1em 1em 0;
+}
+
+p.first {
+    overflow: hidden;
+}

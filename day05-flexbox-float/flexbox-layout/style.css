@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+
+    border: 2px solid red;
+    width: 600px;
+    margin: 1em auto;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+
+.menu {
+    margin-left: auto;
+}
+
+/* just to see their outlines: */
+/* (not important for positioning) */
+header,
+main,
+footer,
+.logo,
+.menu {
+    border: 2px solid #666666;
+}
