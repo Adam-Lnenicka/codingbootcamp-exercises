@@ -1,0 +1,14 @@
+@import 'variables.scss';
+
+h1 {
+    font-size: 3em;
+    color: $default_text_color;
+    border-bottom: 2px solid $default_text_color;
+}
+
+// paragraph styling
+p {
+    font-size: 1.5em; // we want this bigger
+    line-height: 1.5em;
+    color: $default_text_color;
+}
