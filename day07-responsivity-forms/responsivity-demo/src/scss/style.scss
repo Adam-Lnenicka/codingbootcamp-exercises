@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    background-color: #efefef;
+    padding: 1em;
+
+    nav {
+        margin-left: auto;
+
+        @media (max-width: 400px) {
+            display: none;
+        }
+    }
+
+    .burger {
+        display: none;
+
+        @media (max-width: 400px) {
+            display: block;
+        }
+    }
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 740px) {
+        flex-wrap: wrap;
+    }
+
+    article {
+        flex: 1;
+        margin: 1em;
+
+        @media (max-width: 740px) {
+            flex-basis: 40%;
+        }
+
+        @media (max-width: 480px) {
+            flex-basis: 80%;
+        }
+    }
+}
+
+/* common CSS syntax for media queries: */
+@media (max-width: 740px) { // width of viewport 0px - 740px
+    main {
+        flex-wrap: wrap;
+    }
+
+    main article {
+        flex-basis: 40%; // to push article 3 on second row (using flex-wrap: wrap)
+    }
+}
+
+@media (max-width: 480px) { // width of viewport 0px - 740px
+    main article {
+        flex-basis: 80%;
+    }
+}
+
+h1 {
+    color: red;
+}
+
+@media print {
+    h1 {
+        color: black;
+    }
+}
