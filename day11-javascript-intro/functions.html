@@ -11,7 +11,11 @@
 
     <h1 id="headline">What will we learn today?</h1>
 
-    <button onclick="set_headline()">Change headline</button>
+    <button id="button" onclick="set_headline()">Change headline</button>
+
+    <button onclick="change_content('headline', 1)">Change to 1</button>
+    <button onclick="change_content('headline', '<em>2</em>')">Change to emphasized 2</button>
+    <button onclick="change_content('button', 'Click this')">Change button to 3</button>
 
 </body>
 </html>
