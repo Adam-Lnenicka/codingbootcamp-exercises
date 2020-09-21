@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document with JS</title>
+</head>
+<body>
+
+    <script>
+        // alert('Hello, world!');
+        console.log('Hello, world!');
+
+        let nr_clicked = 0;
+
+        let foo = 0;
+        foo += 2;
+        foo = foo + 2;
+
+        1 == true;  // true, type does not matter, only values
+        1 === true; // false, they are not of the same type
+    </script>
+
+    <button onclick="
+        // nr_clicked = nr_clicked + 1; 
+        // nr_clicked++;
+        console.log('Button was clicked ' + nr_clicked++ + ' times')
+        console.log('The value of the variable is now ', nr_clicked);
+
+        let result = ((1 > 2) ? 123 : 456);
+        console.log(result);
+    ">Click me!</button>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
