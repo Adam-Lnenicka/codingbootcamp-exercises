@@ -1,0 +1,108 @@
+<html>
+<head>
+</head>
+<body>
+
+<script>
+	const nidIsValid = (nid) => {
+		// stage 1
+		if(nid.length !== 10){
+			return false;
+		}
+
+		const nidNumber = parseInt(nid, 10);
+
+		if (Number.isNaN(nidNumber)) {
+			return false;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		// stage 2
+
+		if(nidNumber % 11 !== 0){
+			return false;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		// preparation for every other stages
+		const day = Math.floor(nidNumber / 10000) % 100;
+		const month = Math.floor(nidNumber / 1000000) % 100;
+		const year = Math.floor(nidNumber / 100000000) % 100;
+
+		console.log(year, month, day);
+
+			
+		// stage 3
+		if((month < 1 || month > 12) && (month < 51 || month > 62)){
+			return false
+		}
+
+		
+		// stage 4 
+		if(day < 1 || day > 31){
+			return false
+		}
+
+		// stage 5
+
+		// 31 days for January, March, May, July, August, October and December,
+		// you don't need to do anything - this is allready checked by stage 4
+
+		//30 days for April, June, September and November,
+		if((month == 4 || month == 54 || month == 6 || month == 56 || month == 9 || month == 59 || month == 11 || month == 61) && day > 30) {
+
+			return false
+		}
+
+		//28 days for February
+
+		if((month == 2 || month == 52) && day > 28) {
+			return false
+		}
+	 	
+
+	  	return true;
+	};
+
+	console.log(nidIsValid('7561142468'))
+</script>
+
+
+
+</body>
+</html>
