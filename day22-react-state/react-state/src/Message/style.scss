@@ -1,0 +1,16 @@
+.message {
+  line-height: 150%;
+  margin-bottom: 1rem;
+
+  &__sender {
+    font-weight: bold;
+  }
+
+  &__subject {
+    color: #999;
+  }
+}
+
+.message--selected {
+  background-color: red;
+}
