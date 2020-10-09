@@ -1,11 +1,18 @@
 <?php
 
+// require libraries needed for "database" access
+require_once 'DBBlackbox.php';
+
 // display-form.php?action=create
 // display-form.php?action=edit&puppy_id=1
 
 // is this creating a new puppy or editing and existing puppy
 if (isset($_GET['puppy_id'])) {
     // this is editing a puppy with id $_GET['puppy_id']
+    
+    // find the correct puppy in the database
+    $puppy = find($_GET['puppy_id']);
+
 } else {
     // this is creating a new puppy
 
@@ -16,6 +23,18 @@ if (isset($_GET['puppy_id'])) {
         'cuteness' => 9
     ];
 }
+
+// prepare the query string for handle-form.php
+// so that it too knows if this is create or edit
+if (isset($_GET['puppy_id'])) {
+    //               ?puppy_id=1   <- trying to create this
+    $query_string = '?puppy_id=' . $_GET['puppy_id'];
+} else {
+    $query_string = '';
+}
+
+// same as above:
+// $query_string = isset($_GET['puppy_id']) ? '?puppy_id=' . $_GET['puppy_id'] : '';
 
 ?>
 <!DOCTYPE html>
@@ -37,7 +56,7 @@ if (isset($_GET['puppy_id'])) {
         </nav>
     </header>
 
-    <form action="handle-form.php" method="post">
+    <form action="handle-form.php<?= $query_string ?>" method="post">
     
         <label for="">
             Puppy name:<br>
