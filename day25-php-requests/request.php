@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // if (isset($_GET['name'])) {
 //     $user_name = $_GET['name'];
 // } else {
@@ -30,6 +32,13 @@ $query_string = http_build_query($query_string_data);
 
 var_dump($query_string);
 
+$pages = [
+    'home',
+    'contact',
+    'category',
+    'product'
+];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,6 +64,10 @@ var_dump($query_string);
         <a href="?page=home">Home</a>
         <a href="?page=product">Product</a>
         <a href="?page=contact">Contact form</a>
+
+        <?php foreach ($pages as $page) : ?>
+            <a href="?page=<?= $page ?>"><?= $page ?></a>
+        <?php endforeach; ?>
     </nav>
 
     <?php
