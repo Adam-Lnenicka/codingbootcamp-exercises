@@ -8,7 +8,7 @@ require_once 'DBBlackbox.php';
 session_start();
 
 include 'flashed-stuff.php'; // provides $flashed_messages 
-                             // and the old() function
+                               // and the old() function
 
 // display-form.php?action=create
 // display-form.php?action=edit&puppy_id=1
@@ -27,7 +27,8 @@ if (isset($_GET['puppy_id'])) {
     $puppy = [
         'name' => null,
         'breed' => null,
-        'cuteness' => 9
+        'cuteness' => 9,
+        'gender' => 'male'
     ];
 }
 
@@ -75,22 +76,29 @@ if (isset($_GET['puppy_id'])) {
     
         <label for="">
             Puppy name:<br>
-            <input type="text" name="name" value="<?= $puppy['name'] ?>">
+            <input type="text" name="name" value="<?= htmlspecialchars(old('name', $puppy['name'])) ?>">
         </label>
         <br><br>
 
         <label for="">
             Breed:<br>
-            <input type="text" name="breed" value="<?= $puppy['breed'] ?>">
+            <input type="text" name="breed" value="<?= old('breed', $puppy['breed']) ?>">
         </label>
         <br><br>
 
         <label for="">
             Cuteness level:<br>
             <select name="cuteness" id="">
-                <option value="9" <?= $puppy['cuteness'] == 9 ? 'selected' : '' ?>>9</option>
-                <option value="10" <?= $puppy['cuteness'] == 10 ? 'selected' : '' ?>>10</option>
+                <option value="9" <?= old('cuteness', $puppy['cuteness']) == 9 ? 'selected' : '' ?>>9</option>
+                <option value="10" <?= old('cuteness', $puppy['cuteness']) == 10 ? 'selected' : '' ?>>10</option>
             </select>
+        </label>
+        <br><br>
+
+        <label for="">
+            Gender:<br>
+            <input type="radio" name="gender" value="male" <?= old('gender', $puppy['gender']) == 'male' ? 'checked' : '' ?>>
+            <input type="radio" name="gender" value="female" <?= old('gender', $puppy['gender']) == 'female' ? 'checked' : '' ?>>
         </label>
         <br><br>
 
