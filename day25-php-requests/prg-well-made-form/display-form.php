@@ -3,6 +3,13 @@
 // require libraries needed for "database" access
 require_once 'DBBlackbox.php';
 
+// start the session to have the possibility
+// to work with flashed data
+session_start();
+
+include 'flashed-stuff.php'; // provides $flashed_messages 
+                             // and the old() function
+
 // display-form.php?action=create
 // display-form.php?action=edit&puppy_id=1
 
@@ -43,6 +50,8 @@ if (isset($_GET['puppy_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The form</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -55,6 +64,12 @@ if (isset($_GET['puppy_id'])) {
         
         </nav>
     </header>
+
+    <?php foreach ($messages as $message) : ?>
+
+        <div class="message"><?= $message ?></div>
+
+    <?php endforeach; ?>
 
     <form action="handle-form.php<?= $query_string ?>" method="post">
     

@@ -13,6 +13,13 @@ session_start();
 // is this creating a new puppy or editing and existing puppy
 if (isset($_GET['puppy_id'])) {
     // this is editing a puppy with id $_GET['puppy_id']
+
+    // get puppy_id from the URL
+    $puppy_id = $_GET['puppy_id'];
+
+    // find the correct puppy in the database
+    $puppy = find($_GET['puppy_id']);
+
 } else {
     // this is creating a new puppy
 
@@ -42,11 +49,8 @@ $puppy['cuteness']  = $_POST['cuteness'] ?? $puppy['cuteness'];
 if (isset($_GET['puppy_id'])) {
     // this is editing a puppy with id $_GET['puppy_id']
     
-    // get puppy_id from the URL
-    $puppy_id = $_GET['puppy_id'];
-
-    // find the correct puppy in the database
-    $puppy = find($_GET['puppy_id']);
+    // update an existing record
+    update($_GET['puppy_id'], $puppy);
 
 } else {
     // this is creating a new puppy
@@ -54,7 +58,9 @@ if (isset($_GET['puppy_id'])) {
 }
 
 // flash success message(s)
-$_SESSION['flashed_messages'] = ['Puppy successfully saved!'];
+$_SESSION['flashed_messages'] = [
+    'Puppy successfully saved!'
+];
 
 // redirect (to the display form, with the inserted puppy's id)
 header('Location: display-form.php?puppy_id=' . $puppy_id);
