@@ -1,0 +1,33 @@
+Student
+(table students)
+-------
+id integer
+name short string
+gpa decimal
+gender string
+has_student_grant boolean
+date_of_birth date
+skill_level string
+phone_number string
+remote_studying boolean
+age integer
+college_id integer
+grades long string
+email string
+final_project_topic string (long)
+height integer
+thesis_consultant_id integer
+education string
+graduation_year year
+hometown string
+nationality string
+
+colleges
+---------
+id integer
+name string
+
+consultants
+------------
+id
+name

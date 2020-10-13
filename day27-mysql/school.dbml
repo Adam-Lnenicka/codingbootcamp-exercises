@@ -1,0 +1,24 @@
+Table students {
+  id int [pk, increment]
+  user_id int [ref: - users.id]
+  mentor_id int [ref: > students.id]
+}
+
+Table users {
+  id int [pk, increment]
+}
+
+Table papers {
+  id int [pk, increment]
+  class_id int [ref: > classes.id]
+  student_id int [ref: > students.id]
+}
+
+Table classes {
+  id int [pk, increment]
+}
+
+Table class_student {
+  class_id int [ref: > classes.id]
+  student_id int [ref: > students.id]
+}
