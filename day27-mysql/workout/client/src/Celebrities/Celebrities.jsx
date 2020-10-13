@@ -40,6 +40,7 @@ export default class Celebrities extends React.Component {
         let content = (
             <div className="message">Loading...</div>
         )
+
         if (!this.state.loading) {
             content = (
                 <>
