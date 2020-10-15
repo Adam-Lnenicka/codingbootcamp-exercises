@@ -54,7 +54,39 @@ $query = "
     WHERE `head_of_state` = ?
 ";
 
-update($query, [
-    'Donald J. Trump',
-    'George W. Bush'
-]);
+// update($query, [
+//     'Donald J. Trump',
+//     'George W. Bush'
+// ]);
+
+
+$query = "
+    UPDATE `countries`
+    SET `population` = ?,
+        `gnp` = ?
+    WHERE `name` = ?
+";
+
+// update($query, [300, 13.91, 'United States Minor Outlying Islands']);
+
+
+require_once 'Region.php';
+
+// $region = new Region;
+// $region->id = 3;
+// $region->name = 'CHANGED';
+// $region->slug = 'changed';
+
+// $region->update();
+
+$region = select_one("
+    SELECT *
+    FROM `regions`
+    WHERE `id` = ?
+", [4], 'Region');
+
+// var_dump($region);
+
+$region->name = 'My region!!';
+
+$region->update();

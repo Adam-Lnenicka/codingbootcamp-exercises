@@ -27,4 +27,24 @@ class Region
         // was assigned to it by the database
         $this->id = last_insert_id();
     }
+
+    /**
+     * updates this record in database if it was
+     * alread saved there
+     */
+    public function update()
+    {
+        if (!$this->id) {
+            return false;
+        }
+
+        $query = "
+            UPDATE `regions`
+            SET `name` = ?,
+                `slug` = ?
+            WHERE `id` = ?
+        ";
+
+        update($query, [$this->name, $this->slug, $this->id]);
+    }
 }
