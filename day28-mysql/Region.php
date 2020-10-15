@@ -47,4 +47,30 @@ class Region
 
         update($query, [$this->name, $this->slug, $this->id]);
     }
+
+    public function save()
+    {
+        if ($this->id) {
+            // do an update
+            $this->update();
+        } else {
+            // do an insert
+            $this->insert();
+        }
+    }
+
+    public function delete()
+    {
+        if (!$this->id) {
+            return false;
+        }
+
+        $query = "
+            DELETE
+            FROM `regions`
+            WHERE `id` = ?
+        ";
+
+        delete($query, [$this->id]);
+    }
 }

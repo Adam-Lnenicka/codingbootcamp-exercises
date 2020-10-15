@@ -85,8 +85,24 @@ $region = select_one("
     WHERE `id` = ?
 ", [4], 'Region');
 
-// var_dump($region);
+// // var_dump($region);
 
-$region->name = 'My region!!';
+// $region->name = 'My region!!';
 
-$region->update();
+// $region->update();
+
+
+// insert
+$sahara = new Region;
+$sahara->name = 'Sahara';
+$sahara->slug = 'sahara';
+$sahara->save();
+
+
+// update
+$sahara = select_one("SELECT * FROM `regions` WHERE `slug` = ?", 'sahara', 'Region');
+
+if ($sahara) { // record with `slug` = 'sahara' was found
+    $sahara->name = 'La Sahara';
+    $sahara->update();
+}

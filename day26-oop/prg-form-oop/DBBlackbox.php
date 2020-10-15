@@ -15,8 +15,8 @@
  * $id = insert($data)
  * update($id, $data)
  * delete($id)
- * select($limit, $offset)
- * find($id)
+ * select($limit, $offset, $objects = false)
+ * find($id, $objects = false)
  */
 
 class DBBlackbox
@@ -46,33 +46,7 @@ class DBBlackbox
         if (static::$data === null) {
             if (file_exists(static::getDataFile())) {
                 $json = file_get_contents(static::getDataFile());
-
-                if ($objects === true) {
-                    // create stdClass objects
-                    $data = json_decode($json, false);
-                } else {
-                    // create arrays
-                    $data = json_decode($json, true);
-
-                    if ($objects !== false && is_string($objects)) {
-                        
-                        // create objects of a specific class
-                        // $data_as_objects = [];
-                        
-                        foreach ($data as $data_key => &$item) {
-
-                            $object = static::hydrateObject($item, $objects); // $objects here contains name of a class
-
-                            $item = $object;
-
-                            // $data_as_objects[$data_key] = $object;
-                        }
-
-                        // $data = $data_as_objects;
-                    }
-                }
-
-                static::$data = $data;
+                static::$data = json_decode($json, true);
             }
 
             if (!static::$data) {
