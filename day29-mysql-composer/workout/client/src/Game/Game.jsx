@@ -17,6 +17,14 @@ export default class Game extends React.Component {
 
                     <p>{ this.props.description }</p>
 
+                    <ul>
+                        {
+                            this.props.genres.map(genre => {
+                                return <li key={ genre.id }>{ genre.name }</li>
+                            })
+                        }
+                    </ul>
+
                 </div>
             </div>
         );
